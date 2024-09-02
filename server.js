@@ -21,11 +21,11 @@ const cors = require('cors');
 
 // parse application/x-www-form-urlencoded
 app.use(cors())
--
+
 // Define routes
 app.use('/api/auth',authRoute);
-app.use('/api/categories', categoryRoute);
-app.use('/api/products', productRoute);
+// app.use('/api/categories', categoryRoute);
+// app.use('/api/products', productRoute);
 
 const PORT = process.env.PORT || 5000;
 
