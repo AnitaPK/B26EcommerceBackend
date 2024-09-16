@@ -27,7 +27,7 @@ async function loginUser (req, res) {
     try {
         const user = await User.findOne({ email });
         if (!user || !(await user.matchPassword(password))) {
-            return res.status(401).json({ message: 'Invalid credentials', success:false });
+            return res.status(401).send({ message: 'Invalid credentials', success:false });
         }
         const payload = { user: { id: user.id, role: user.role } };
         const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' });
