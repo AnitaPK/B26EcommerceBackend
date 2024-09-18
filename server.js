@@ -3,7 +3,7 @@ const connectDB = require('./config/db');
 const dotenv = require('dotenv');
 const authRoute =  require('./routes/userRoute')
 const categoryRoute = require('./routes/categoryRoute');
-// const productRoute = require('./routes/productRoute')
+const productRoute = require('./routes/productRoute')
 
 
 // Load config
@@ -25,7 +25,7 @@ app.use(cors())
 // Define routes
 app.use('/api/auth',authRoute);
 app.use('/api/categories', categoryRoute);
-// app.use('/api/products', productRoute);
+app.use('/api/products', productRoute);
 
 const PORT = process.env.PORT || 5000;
 
